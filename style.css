@@ -101,7 +101,7 @@ a {
     justify-content: center;
     overflow: hidden;
     /* Use the generated background image */
-    background: url('assets/farm-bg.png') no-repeat center center/cover;
+    background: url('assets/main.png') no-repeat center center/cover;
 }
 
 /* Overlay to ensure text readability on top of image */
