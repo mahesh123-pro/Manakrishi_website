@@ -228,3 +228,40 @@ if (newsletterForm) {
         }, 3000);
     });
 }
+// 7. Theme Toggle Logic
+const themeBtn = document.getElementById('theme-toggle');
+const sunIcon = document.querySelector('.sun-icon');
+const moonIcon = document.querySelector('.moon-icon');
+const body = document.body;
+
+// Check for saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    body.classList.add('light-mode');
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+}
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        const isLight = body.classList.contains('light-mode');
+
+        // Update Icons
+        sunIcon.style.display = isLight ? 'none' : 'block';
+        moonIcon.style.display = isLight ? 'block' : 'none';
+
+        // Save Preference
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+}
+
+// 8. Navbar Scroll Effect
+const nav = document.querySelector('.glass-nav');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
